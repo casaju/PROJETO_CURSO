@@ -1,1 +1,1 @@
-Este é o reposotorio do meu projeto para o curso de Django+Python 
+This is the repository of my project for the Django+Python course
