@@ -8,5 +8,5 @@ def about(request):
     return HttpResponse("ABOUT PAGE IS WORKING!")
 
 def contact(request):
-    return HttpResponse("CONTACT PAGE IS WORKING!")
+    return render(request, 'recipes/contact.html')
 
