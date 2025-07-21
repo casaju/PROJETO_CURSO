@@ -21,6 +21,6 @@ from django.http import HttpResponse
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('recipes.migrations.urls')),  # Include the URLs from recipes app
+    path('',include('recipes.urls')),  # Include the URLs from recipes app
     # Add more paths as needed
 ]
