@@ -69,7 +69,7 @@ Open your browser and go to:
 - [ ] Improve responsive design  
 - [ ] Add image upload for recipes  
 - [ ] Allow editing and deleting recipes  
-- [ ] Deploy to a live server (e.g., Render, Railway, or Heroku)
+
 
 ---
 
