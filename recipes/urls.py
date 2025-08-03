@@ -1,5 +1,5 @@
 from django.urls import path
-from recipes import views
+from .recipes import views
 
 app_name = 'recipes' # Namespace for the app
 

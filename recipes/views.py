@@ -1,6 +1,5 @@
 from multiprocessing import context
-from django.shortcuts import render
-from utils.recipes.factory import make_recipe
+from django.shortcuts import render, get_object_or_404from utils.recipes.factory import make_recipe
 from .models import Recipe
 
 def home(request):
@@ -17,8 +16,9 @@ def category(request, category_id):
     })
 
 def recipe(request, id):
+    recipe = get_object_or_404(Recipe, pk=id, is_published=True)
     return render(request, 'recipes/pages/recipe-page.html', context={
-        'recipe': make_recipe(),
+        'recipe': recipe,
         'is_detail_page': True,
     })
 # This view is for displaying a single recipe page.
