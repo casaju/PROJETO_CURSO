@@ -1,11 +1,12 @@
 from multiprocessing import context
-from django.shortcuts import render, get_object_or_404from utils.recipes.factory import make_recipe
+from django.shortcuts import render, get_object_or_404
+from utils.recipes.factory import make_recipe
 from .models import Recipe
 
 def home(request):
-    recipe= Recipe.objects.filter(is_published=True).order_by('-id')
+    recipes = Recipe.objects.filter(is_published=True).order_by('-id')
     return render(request, 'recipes/pages/home.html', context={
-        'recipes': recipe,
+        'recipes': recipes,
     })
 
 
@@ -16,9 +17,8 @@ def category(request, category_id):
     })
 
 def recipe(request, id):
-    recipe = get_object_or_404(Recipe, pk=id, is_published=True)
-    return render(request, 'recipes/pages/recipe-page.html', context={
-        'recipe': recipe,
+    return render(request, 'recipes/pages/recipe-view.html', context={
+        'recipe': make_recipe(),
         'is_detail_page': True,
     })
 # This view is for displaying a single recipe page.
