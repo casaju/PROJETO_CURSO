@@ -11,14 +11,17 @@ def home(request):
 
 
 def category(request, category_id):
-    recipe= Recipe.objects.filter(category_id=category_id, is_published=True).order_by('-id')
+    recipe = Recipe.objects.filter(category__id=category_id, is_published=True).order_by('-id')
+    if not recipe:
+        raise get_object_or_404(Recipe, pk=category_id, is_published=True)
     return render(request, 'recipes/pages/category.html', context={
         'recipes': recipe,
     })
 
 def recipe(request, id):
-    return render(request, 'recipes/pages/recipe-view.html', context={
-        'recipe': make_recipe(),
+    recipe = get_object_or_404(Recipe, pk=id, is_published=True)
+    return render(request, 'recipes/pages/recipe-page.html', context={
+        'recipe': recipe,
         'is_detail_page': True,
     })
 # This view is for displaying a single recipe page.
