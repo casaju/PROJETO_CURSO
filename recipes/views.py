@@ -14,13 +14,15 @@ def category(request, category_id):
     recipe = Recipe.objects.filter(category__id=category_id, is_published=True).order_by('-id')
     if not recipe:
         raise get_object_or_404(Recipe, pk=category_id, is_published=True)
+
     return render(request, 'recipes/pages/category.html', context={
         'recipes': recipe,
-        'title': f'{recipe.first().category.name} - Category | ',
+        'title': f'{recipe.first().category.name} - Category | '
     })
 
+
 def recipe(request, id):
-    recipe = get_object_or_404(Recipe, pk=id, is_published=True)
+    recipe = Recipe.objects.filter(id=id, is_published=True).order_by('-id').first()
     return render(request, 'recipes/pages/recipe-page.html', context={
         'recipe': recipe,
         'is_detail_page': True,
