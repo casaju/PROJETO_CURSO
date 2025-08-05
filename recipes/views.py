@@ -16,6 +16,7 @@ def category(request, category_id):
         raise get_object_or_404(Recipe, pk=category_id, is_published=True)
     return render(request, 'recipes/pages/category.html', context={
         'recipes': recipe,
+        'title': f'{recipe.first().category.name} - Category | ',
     })
 
 def recipe(request, id):
