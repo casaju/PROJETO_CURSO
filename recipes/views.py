@@ -27,8 +27,7 @@ def recipe(request, id):
         'recipe': recipe,
         'is_detail_page': True,
     })
-# This view is for displaying a single recipe page.
-# It uses the make_recipe function to generate a recipe object
+
 
 
 

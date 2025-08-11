@@ -31,8 +31,8 @@ It's a **recipe website**, where users can view existing recipes and create thei
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/casaju/PROJETO_CURSO.git
-cd PROJETO_CURSO
+git clone https://github.com/casaju/project_CURSO.git
+cd project_CURSO
 ```
 
 2. Create and activate a virtual environment:
