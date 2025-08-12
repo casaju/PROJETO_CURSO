@@ -18,9 +18,6 @@
     "editor.insertSpaces": true,
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": true
-    }
   },
   "[html]": {
     "editor.formatOnSave": true,
